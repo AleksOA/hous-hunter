@@ -14,7 +14,7 @@ html {
 
 /* HEADER START */
 .header__inner {
-    /* position: relative; */
+    position: relative;
     display: flex;
     justify-content: flex-end;
     background: transparent;
