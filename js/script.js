@@ -381,10 +381,6 @@ function formSend(event) {
 
         // docCookies.setItem("email", "${inputEmail.value}", 864e2, "/");
 
-        gtag('config', 'MEASUREMENT_ID', {
-            'email': 'email'
-        });
-
         form.reset();
     }
 
