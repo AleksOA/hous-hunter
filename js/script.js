@@ -344,23 +344,6 @@ function closePopup(event) {
 
 // SUBSCRIBE START
 
-//test cookie start
-const cookie = document.cookie;
-console.log(cookie)
-
-
-
-
-//test cookie fihish
-
-
-
-
-
-
-
-
-
 const form = document.querySelector('.subscribe__form');
 const inputEmail = document.getElementById('email');
 const buttonSubsribe = document.querySelector('.subscribe__input-search');
@@ -376,18 +359,19 @@ function formSend(event) {
     if (error == 0) {
         console.log('this form sended');
 
-
-        document.cookie = `email_${inputEmail.value} = ${inputEmail.value}; expires=Sun, 16 Jul 3567 06:23:41 GMT`;
-
-        // docCookies.setItem("email", "${inputEmail.value}", 864e2, "/");
+        localStorage.setItem('email', JSON.stringify(inputEmail.value));
 
         form.reset();
+        form.classList.add('active');
+
     }
 
 
 
 
 }
+
+
 
 
 function validateInput() {
@@ -422,6 +406,26 @@ function valid(input) {
     input.classList.remove('active');
 }
 
+
+
+
+
+//test local Storage start
+
+let locStorEmail = localStorage.getItem('email');
+
+
+if (locStorEmail !== null) {
+
+    form.classList.add('active');
+}
+
+else {
+    form.classList.remove('active');
+}
+
+
+// test local Storage finish
 
 
 //SUBSCRIBE FINISH
