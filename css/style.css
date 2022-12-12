@@ -1655,6 +1655,11 @@ html {
     font-size: 14px;
     line-height: 22px;
     color: #888B97;
+
+}
+
+.subscribe__form.active .subscribe__input-text::placeholder {
+    color: transparent;
 }
 
 .subscribe__form-button {
@@ -1695,6 +1700,30 @@ html {
     transition: all 0.2s;
     cursor: pointer;
 }
+
+.subscribe__form-text2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #888B97;
+    padding-left: 65px;
+    padding-top: 17px;
+    display: none;
+}
+
+.subscribe__form.active .subscribe__form-text2 {
+    display: block;
+}
+
+
+
+
 
 .subscribe__images-three {
     width: 25%;
