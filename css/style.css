@@ -2,8 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
-.body {
-    background: #E5E5E5;
+body {
+    /* background: #E5E5E5; */
+    overflow-x: hidden;
+
 }
 
 .container {
@@ -195,6 +197,7 @@ html {
     width: 100%;
     padding: 17px 129px 17px 64px;
     background: #FFFFFF;
+    background: transparent;
     border: 1px solid #E0E3EB;
     border-radius: 32px;
     margin: 32px 0;
@@ -460,6 +463,8 @@ html {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 716px;
+    /* margin-bottom: 40px; */
+
 }
 
 .recommendation__title {
@@ -614,6 +619,10 @@ html {
     top: 117px;
 
 
+}
+
+.recommendation__slick .slick-list {
+    width: 3000px;
 }
 
 .recommendation__slick-item {
