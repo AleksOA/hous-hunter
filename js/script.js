@@ -111,19 +111,16 @@ $(document).ready(function () {
             }
 
             if (w == 0) {
-                console.log('IF2')
                 slickNext.forEach(function (el) {
                     if (el.classList.contains('slick-disabled')) {
                         let recomSlickDotsParent = recomSlickDots.parentNode;
 
                         if (recomSlickDotsParent.classList.contains('recommendation__slick-dots')) {
-                            console.log('OK')
                             recomDotsNext.classList.add('active');
                         }
                     }
 
                     else {
-                        console.log('SSSSSSSSS');
                         recomDotsPrevious.classList.remove('active');
                         recomDotsNext.classList.remove('active');
                     }
@@ -263,35 +260,12 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-//VIDEO START
-
-const tag = document.createElement('script');
-
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-let player;
-
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
-
-
-
-//VIDEO FIHISH
-
 //POPUP START
 
 
 const linkPopup = document.querySelector('.ready__two-vidio-link');
 const popup = document.querySelector('.popup');
+const popupVideo = document.getElementById('popupVideo');
 
 
 document.addEventListener('click', closePopup);
@@ -300,39 +274,20 @@ function closePopup(event) {
     if (popup.classList.contains('open')) {
         if (event.target.closest('.popup__close-background')) {
             popup.classList.remove('open');
-            player.pauseVideo();
+            popupVideo.pause();
         }
 
         if (!event.target.closest('.popup__content-box')) {
             popup.classList.remove('open');
-            player.pauseVideo();
+            popupVideo.pause();
         };
 
     }
 
     if (event.target.closest('.ready__two-vidio-link')) {
-        if (player) {
-            console.log('if3')
-            event.preventDefault();
-            popup.classList.add('open');
-        }
-        else {
-            event.preventDefault();
-            popup.classList.add('open');
-
-
-            player = new YT.Player('player', {
-                videoId: 'st7r6Tq0YFw',
-                playerVars: {
-                    'playsinline': 1
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                }
-            });
-
-
-        }
+        event.preventDefault();
+        popup.classList.add('open');
+        popupVideo.play();
 
     }
 }
