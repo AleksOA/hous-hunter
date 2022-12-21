@@ -1,3 +1,47 @@
+//HEADER MENU START
+const headerMenu = document.querySelector('.header__menu');
+
+document.addEventListener('click', menu);
+
+function menu(event) {
+
+    if (headerMenu.classList.contains('open')) {
+
+        if (!event.target.closest('.header__menu')) {
+
+            closeMenu();
+        }
+
+        if (event.target.closest('.header__maenu-btn')) {
+
+            closeMenu();
+        }
+    }
+
+    else {
+        if (event.target.closest('.header__maenu-btn')) {
+
+            openMenu();
+        }
+
+    }
+
+}
+
+function openMenu() {
+    headerMenu.classList.add('open');
+}
+
+function closeMenu() {
+    headerMenu.classList.remove('open');
+}
+
+
+//HEADER MENU FINISH
+
+
+
+
 //FORM IN SECTION-TOP START
 const inputTop = document.querySelector('.section-top__input-text');
 const buttonTop = document.querySelector('.section-top__input-search');
@@ -33,19 +77,7 @@ buttonTop.addEventListener('click', function (event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //TOP-BANNER START
-
 
 $(document).ready(function () {
     $('.section-top-banner__slick').slick({
@@ -53,15 +85,23 @@ $(document).ready(function () {
         slidesToShow: 2,
         slidesToScroll: 1,
         variableWidth: true,
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 830,
+                settings: {
+                    centerMode: true,
+                    infinite: true,
+                }
+            }
+        ]
     });
 });
 
-
 //TOP-BANNER FINISH
 
-//RECOMMENDATION START
 
+//RECOMMENDATION START
 
 $(document).ready(function () {
     $('.recommendation__slick').slick({
@@ -71,7 +111,7 @@ $(document).ready(function () {
         variableWidth: true,
         arrows: true,
         appendArrows: $('.recommendation__slick-dots'),
-        waitForAnimate: false
+        waitForAnimate: false,
     });
 
     //button prev and next START
@@ -143,7 +183,6 @@ $(document).ready(function () {
 
 
     // FILTER START
-
 
     const recomFilter = document.querySelectorAll('.recommendation__filter');
     function removeClass(recomFilter) {
@@ -223,17 +262,7 @@ $(document).ready(function () {
     // FILTER FINISH
 });
 
-
-
-
-
-
-
 //RECOMMENDATION FINISH
-
-
-
-
 
 
 
@@ -320,9 +349,6 @@ function formSend(event) {
         form.classList.add('active');
 
     }
-
-
-
 
 }
 
